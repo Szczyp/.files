@@ -1,0 +1,12 @@
+set hintmatching=wordstartswith,transliterated
+
+nmap -b d <c-d>
+nmap -b u <c-u>
+nmap -b <c-d> <Nop>
+nmap -b <c-u> <Nop>
+nmap -b x d
+nmap -b X u
+nmap -b j 3j
+nmap -b k 3k
+nmap -b h 3h
+nmap -b l 3l
