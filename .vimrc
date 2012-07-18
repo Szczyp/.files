@@ -54,6 +54,7 @@ filetype plugin indent on     " required!
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 syntax enable
+set cursorline
 set hidden
 set nowrap
 set tabstop=2
