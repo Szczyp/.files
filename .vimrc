@@ -7,7 +7,7 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 " let NeoBundle manage NeoBundle
-" required! 
+" required!
 "NeoBundle 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
@@ -37,6 +37,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'godlygeek/tabular'
 
 " vim-scripts repos
 
