@@ -104,6 +104,8 @@ nnoremap <space> :noh<CR>
 au FileType haskell nnoremap <leader><space> :GhcModType<CR>
 au FileType haskell nnoremap <space> :GhcModTypeClear<CR>:noh<CR>
 
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+
 let g:syntastic_check_on_open=1
 
 set laststatus=2
