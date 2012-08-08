@@ -39,6 +39,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'othree/html5.vim'
+NeoBundle 'tsaleh/vim-matchit'
 
 " vim-scripts repos
 
