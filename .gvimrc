@@ -5,4 +5,4 @@ colorscheme solarized
 set antialias
 
 set guioptions-=T
-set guioptions-=r
+set guioptions-=lrb
