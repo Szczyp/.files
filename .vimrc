@@ -114,3 +114,6 @@ let g:syntastic_check_on_open=1
 set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'fancy'
+
+set backupdir=~/.vim,~/vimfiles/
+set directory=~/.vim,~/vimfiles/
