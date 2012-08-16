@@ -115,5 +115,5 @@ set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'fancy'
 
-set backupdir=~/.vim,~/vimfiles/
-set directory=~/.vim,~/vimfiles/
+set backupdir=~/.vim
+set directory=~/.vim
