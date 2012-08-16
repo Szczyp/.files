@@ -4,5 +4,7 @@ set background=light
 colorscheme solarized
 set antialias
 
+set guioptions-=m
 set guioptions-=T
-set guioptions-=lrb
+set guioptions+=LlRrb
+set guioptions-=LlRrb
