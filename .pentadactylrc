@@ -1,6 +1,7 @@
 set hintmatching=wordstartswith,transliterated
 
-set go=''
+set go=s
+set defsearch=duckduckgo
 
 nmap -b d <c-d>
 nmap -b u <c-u>
