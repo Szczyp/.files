@@ -1,0 +1,21 @@
+set hintmatching=wordstartswith,transliterated
+
+set defsearch=duckduckgo
+
+set gui scrollbars=false
+
+nnoremap d <c-d>
+nnoremap u <c-u>
+nnoremap <c-d> <Nop>
+nnoremap <c-u> <Nop>
+nnoremap x D
+nnoremap X d
+nnoremap U u
+nnoremap j 3j
+nnoremap k 3k
+nnoremap h 3h
+nnoremap l 3l
+nnoremap J <c-p>
+nnoremap K <c-n>
+nnoremap <c-p> <Nop>
+nnoremap <c-n> <Nop>
