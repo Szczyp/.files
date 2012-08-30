@@ -4,6 +4,7 @@ set defsearch=google
 
 set gui scrollbars=false
 set gui complete=sl
+set gui animations=true
 
 nnoremap d <c-d>
 nnoremap u <c-u>
