@@ -1,8 +1,9 @@
 set hintmatching=wordstartswith,transliterated
 
-set defsearch=duckduckgo
+set defsearch=google
 
 set gui scrollbars=false
+set gui complete=sl
 
 nnoremap d <c-d>
 nnoremap u <c-u>
