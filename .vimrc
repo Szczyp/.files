@@ -1,60 +1,36 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-filetype plugin indent off     " required!
+set nocompatible
+filetype off
+filetype plugin indent off
 
-if has('vim_starting')
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#rc(expand('~/.vim/bundle/'))
-endif
-" let NeoBundle manage NeoBundle
-" required!
-"NeoBundle 'Shougo/neobundle.vim'
-" recommended to install
-NeoBundle 'Shougo/vimproc'
-" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimshell'
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" My Bundles here:
-"
-" original repos on github
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'ujihisa/neco-ghc'
-NeoBundle 'ujihisa/neco-ruby'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'dag/vim2hs'
-NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'tsaleh/vim-matchit'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/neocomplcache'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-speeddating'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'ujihisa/neco-ruby'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'dag/vim2hs'
+Bundle 'kana/vim-filetype-haskell'
+Bundle 'kien/ctrlp.vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/syntastic'
+Bundle 'godlygeek/tabular'
+Bundle 'othree/html5.vim'
+Bundle 'tsaleh/vim-matchit'
 
-" vim-scripts repos
-
-" non github repos
-
-" non git repos
-
-" ...
-
-filetype plugin indent on     " required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+filetype plugin indent on
 
 syntax enable
 set cursorline
@@ -115,5 +91,5 @@ set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'fancy'
 
-set backupdir=~/.vim
-set directory=~/.vim
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
