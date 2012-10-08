@@ -5,6 +5,7 @@ filetype plugin indent off
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
