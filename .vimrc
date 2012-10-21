@@ -78,8 +78,8 @@ let mapleader=","
 
 let g:ctrlp_map="<Nop>"
 let g:ctrlp_working_path_mode=2
-nnoremap <leader>f :CtrlPMixed<CR>
-nnoremap <leader>s :VimShell<CR>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <space> :noh<CR>
 
 au FileType haskell nnoremap <leader><space> :GhcModType<CR>
