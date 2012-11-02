@@ -17,9 +17,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-speeddating'
 Bundle 'ujihisa/neco-ghc'
 Bundle 'ujihisa/neco-ruby'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'dag/vim2hs'
 Bundle 'kana/vim-filetype-haskell'
@@ -31,6 +29,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'othree/html5.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'gkz/vim-ls'
+Bundle 'sudo.vim'
+Bundle 'pangloss/vim-javascript'
 
 filetype plugin indent on
 
