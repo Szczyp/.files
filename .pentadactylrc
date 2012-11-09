@@ -14,7 +14,7 @@ nmap -b j 3j
 nmap -b k 3k
 nmap -b h 3h
 nmap -b l 3l
-nmap -b J <c-p>
-nmap -b K <c-n>
+nmap -b K <c-p>
+nmap -b J <c-n>
 nmap -b <c-p> <Nop>
 nmap -b <c-n> <Nop>
