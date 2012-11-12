@@ -31,6 +31,8 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'gkz/vim-ls'
 Bundle 'sudo.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'majutsushi/tagbar'
+Bundle 'bitc/lushtags'
 
 filetype plugin indent on
 
@@ -80,13 +82,11 @@ let g:ctrlp_map="<Nop>"
 let g:ctrlp_working_path_mode=2
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <space> :noh<CR>
 
 au FileType haskell nnoremap <leader><space> :GhcModType<CR>
 au FileType haskell nnoremap <space> :GhcModTypeClear<CR>:noh<CR>
-
-au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-au BufWritePost *.ls silent LiveScriptMake! -b | cwindow | redraw!
 
 let g:syntastic_check_on_open=1
 
