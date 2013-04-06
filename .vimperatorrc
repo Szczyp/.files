@@ -24,3 +24,4 @@ nnoremap K <c-p>
 nnoremap J <c-n>
 nnoremap <c-p> <Nop>
 nnoremap <c-n> <Nop>
+nnoremap s :panorama switch 
