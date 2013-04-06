@@ -1,10 +1,13 @@
 set hintmatching=wordstartswith,transliterated
+set hintchars=" JKLFDSHGUIOPREWNMVC"
 
 set defsearch=google
 
 set gui scrollbars=false
 set gui complete=sl
 set gui animations=true
+
+colorscheme sweets_snaka
 
 nnoremap d <c-d>
 nnoremap u <c-u>
