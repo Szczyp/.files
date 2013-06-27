@@ -1,7 +1,7 @@
 set hintmatching=wordstartswith,transliterated
-set hintchars=" JKLFDSHGUIOPREWNMVC"
+set hintchars="HJKLFDSGUIOPREWNMVC"
 
-set defsearch=google
+set defsearch=duckduckgo
 
 set gui scrollbars=false
 set gui complete=sl
