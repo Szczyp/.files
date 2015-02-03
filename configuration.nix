@@ -9,7 +9,7 @@
   boot.loader.gummiboot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_3_16;
+  boot.kernelPackages = pkgs.linuxPackages_3_18;
 
   networking.hostName = "nixos";
 
@@ -20,9 +20,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget curl emacs git firefox compton dmenu silver-searcher
-    leiningen phantomjs
-    haskellPackages.ghcMod haskellPackages.hoogle haskellPackages.cabal2nix
+    wget curl emacs git firefox compton dmenu silver-searcher 
   ];
 
   services.xserver = {
@@ -34,6 +32,10 @@
     displayManager.slim = { enable = true;
     			    # autoLogin = true;
 			    defaultUser = "qb";
+			    theme = pkgs.fetchurl {
+			      url = "https://github.com/jagajaga/nixos-slim-theme/archive/Final.tar.gz";
+			      sha256 = "4cab5987a7f1ad3cc463780d9f1ee3fbf43603105e6a6e538e4c2147bde3ee6b";
+			    };
 			  };
     layout = "us";
     xkbOptions = "eurosign:e";
