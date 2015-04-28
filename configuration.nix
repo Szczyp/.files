@@ -52,9 +52,7 @@
   };
 
   fonts = {
-  	enableFontDir = true;
-	fonts = with pkgs; [
-	      inconsolata
-	];
+    enableFontDir = true;
+    fonts = with pkgs; [ inconsolata source-code-pro ];
   };
 }
