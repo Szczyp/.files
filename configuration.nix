@@ -20,23 +20,25 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget curl emacs git firefox compton dmenu silver-searcher 
+    wget curl emacs git firefox compton dmenu silver-searcher p7zip
   ];
 
   services.xserver = {
     enable = true;
-    windowManager.xmonad = { enable = true;
-    			     enableContribAndExtras = true;
-			   };
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+		};
     desktopManager.xterm.enable = false;
-    displayManager.slim = { enable = true;
-    			    # autoLogin = true;
-			    defaultUser = "qb";
-			    theme = pkgs.fetchurl {
-			      url = "https://github.com/jagajaga/nixos-slim-theme/archive/Final.tar.gz";
-			      sha256 = "4cab5987a7f1ad3cc463780d9f1ee3fbf43603105e6a6e538e4c2147bde3ee6b";
-			    };
-			  };
+    displayManager.slim = {
+      enable = true;
+    	# autoLogin = true;
+			defaultUser = "qb";
+			theme = pkgs.fetchurl {
+			  url = "https://github.com/jagajaga/nixos-slim-theme/archive/Final.tar.gz";
+			  sha256 = "4cab5987a7f1ad3cc463780d9f1ee3fbf43603105e6a6e538e4c2147bde3ee6b";
+			};
+		};
     layout = "us";
     xkbOptions = "eurosign:e";
   };
