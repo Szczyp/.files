@@ -18,9 +18,9 @@
      ;; --------------------------------------------------------
      auto-completion
      better-defaults
-     evil-commentary
      shell
 
+     emacs-lisp
      haskell
      clojure
 
@@ -143,13 +143,34 @@ before layers configuration."
 
   ;;add nix path
   (add-to-list 'exec-path "~/.nix-profile/bin")
+
   )
 
 (defun dotspacemacs/config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-)
+
+  (setq clojure-enable-fancify-symbols t)
+
+  (add-hook
+   'clojure-mode-hook
+   (lambda ()
+     (define-clojure-indent
+       (match 'defun)
+       (mlet 1)
+       (mdo 0)
+       (component 1)
+       (on-let 1))))
+
+  (defvar extra-clojure-symbols '("match" "f->>" "f->" "fn->>" "fn->" "<-"
+                                  "mlet" "mdo" "return"))
+
+  (font-lock-add-keywords 'clojure-mode
+                          `((,(concat "(\\(?:\.*/\\)?"
+                                      (regexp-opt extra-clojure-symbols t)
+                                      "\\>")
+                             1 font-lock-keyword-face))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
