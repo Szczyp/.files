@@ -22,8 +22,9 @@
 
      emacs-lisp
      haskell
-     clojure
-
+     (clojure :variables
+              clojure-enable-fancify-symbols t)
+     extra-langs
      (git :variables
           git-gutter-use-fringe t)
      ;; markdown
@@ -151,7 +152,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
-  (setq clojure-enable-fancify-symbols t)
+  (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
 
   (add-hook
    'clojure-mode-hook
