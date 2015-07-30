@@ -29,16 +29,10 @@
       enable = true;
       enableContribAndExtras = true;
 		};
+    windowManager.default = "xmonad";
     desktopManager.xterm.enable = false;
-    displayManager.slim = {
-      enable = true;
-    	# autoLogin = true;
-			defaultUser = "qb";
-			theme = pkgs.fetchurl {
-			  url = "https://github.com/jagajaga/nixos-slim-theme/archive/Final.tar.gz";
-			  sha256 = "4cab5987a7f1ad3cc463780d9f1ee3fbf43603105e6a6e538e4c2147bde3ee6b";
-			};
-		};
+    displayManager.auto.enable = true;
+    displayManager.auto.user = "qb";
     layout = "us";
     xkbOptions = "eurosign:e";
   };
@@ -46,15 +40,17 @@
   users.extraUsers.qb = {
     name = "qb";
     group = "users";
-    extraGroups = [ "wheel" "disk" "audio" "video" "networkmanager" "systemd-journal" ];
+    extraGroups = [ "wheel" ];
     uid = 1000;
     createHome = true;
     home = "/home/qb";
-    shell = "/run/current-system/sw/bin/bash";
+    shell = "/run/current-system/sw/bin/zsh";
   };
 
   fonts = {
     enableFontDir = true;
     fonts = with pkgs; [ inconsolata source-code-pro ];
   };
+
+  programs.zsh.enable = true;
 }

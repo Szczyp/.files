@@ -162,7 +162,8 @@ layers configuration."
        (mlet 1)
        (mdo 0)
        (component 1)
-       (on-let 1))))
+       (on-let 1))
+     (setq cider-boot-parameters "dev")))
 
   (defvar extra-clojure-symbols '("match" "f->>" "f->" "fn->>" "fn->" "<-"
                                   "mlet" "mdo" "return"))

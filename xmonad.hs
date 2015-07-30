@@ -19,4 +19,4 @@ main = do
     , handleEventHook = fullscreenEventHook
     , layoutHook      = noBorders . fullscreenFull . avoidStruts $ layout
     , modMask         = mod4Mask
-    } `additionalKeys` [ ((mod4Mask, xK_p), spawn "dmenu_run -i") ]
+    } `additionalKeys` [((mod4Mask, xK_p), spawn "dmenu_run -i -fn 'Source Code Pro-15'") ]
