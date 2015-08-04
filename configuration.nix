@@ -40,13 +40,13 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget curl emacs git firefox compton dmenu silver-searcher p7zip
-    powertop
+    powertop thunderbird
   ];
 
   services.xserver = {
     enable = true;
+    videoDrivers = [ "intel" ];
     vaapiDrivers = [ pkgs.vaapiIntel ];
-    useGlamor = true;
     windowManager.default = "xmonad";
     windowManager.xmonad = {
       enable = true;
@@ -60,6 +60,10 @@
       };
       desktopManagerHandlesLidAndPower = false;
     };
+    deviceSection = ''
+      Option "AccelMethod" "sna"
+      Option "TearFree" "true"
+    '';
     layout = "us";
     xkbOptions = "eurosign:e";
     synaptics = {
@@ -80,10 +84,9 @@
     };
   };
 
-  users.extraGroups.qb = {};
   users.extraUsers.qb = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "qb" ];
+    extraGroups = [ "wheel" ];
   };
 
   fonts = {
