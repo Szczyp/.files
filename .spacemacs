@@ -21,9 +21,6 @@
      shell
 
      emacs-lisp
-     haskell
-     (clojure :variables
-              clojure-enable-fancify-symbols t)
      extra-langs
      (git :variables
           git-gutter-use-fringe t)
@@ -73,13 +70,6 @@ before layers configuration."
                          solarized-dark)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
-   ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
-   ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 17
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -151,28 +141,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-
-  (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
-
-  (add-hook
-   'clojure-mode-hook
-   (lambda ()
-     (define-clojure-indent
-       (match 'defun)
-       (mlet 1)
-       (mdo 0)
-       (component 1)
-       (on-let 1))
-     (setq cider-boot-parameters "dev")))
-
-  (defvar extra-clojure-symbols '("match" "f->>" "f->" "fn->>" "fn->" "<-"
-                                  "mlet" "mdo" "return"))
-
-  (font-lock-add-keywords 'clojure-mode
-                          `((,(concat "(\\(?:\.*/\\)?"
-                                      (regexp-opt extra-clojure-symbols t)
-                                      "\\>")
-                             1 font-lock-keyword-face))))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
