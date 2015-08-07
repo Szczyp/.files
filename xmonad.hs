@@ -1,22 +1,27 @@
 import XMonad
-import XMonad.Hooks.ManageDocks
-import XMonad.Layout.Fullscreen
-import XMonad.Layout.NoBorders
-import XMonad.Util.EZConfig (additionalKeys)
+import XMonad.ManageHook
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.EZConfig
 
-layout = tiled ||| Full
-  where tiled = Tall nmaster delta ratio
-        nmaster = 1
+tiled = Tall nmaster delta ratio
+  where nmaster = 1
         ratio = 1/2
         delta = 1/8
 
-main :: IO ()
+keybindings = [ ("M-p", spawn "dmenu_run -i -fn 'Fira Sans Medium-13'")
+              , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume 0 -5%")
+              , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume 0 +5%")
+              , ("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
+              ]
+
+ignore = composeAll [ title =? "LIMBO" --> doIgnore ]
+
 main = do
-  spawn "xrdb -merge ~/.Xresources"
-  spawn "compton -bf -i 0.9 -e 0.9 --sw-opti"
-  xmonad $ defaultConfig
-    { manageHook      = manageDocks <+> fullscreenManageHook <+> manageHook defaultConfig
+  xmonad $ ewmh defaultConfig
+    { borderWidth     = 0
+    , layoutHook      = tiled ||| Full
+    , manageHook      = ignore
     , handleEventHook = fullscreenEventHook
-    , layoutHook      = noBorders . fullscreenFull . avoidStruts $ layout
+    , startupHook     = spawn "compton -bf --inactive-dim 0.05 --backend glx"
     , modMask         = mod4Mask
-    } `additionalKeys` [((mod4Mask, xK_p), spawn "dmenu_run -i -fn 'Source Code Pro-15'") ]
+    } `additionalKeysP` keybindings
