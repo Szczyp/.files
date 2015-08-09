@@ -26,15 +26,16 @@
 
   boot.loader.gummiboot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.kernelPackages = pkgs.linuxPackages_4_1;
+
+  security.sudo.wheelNeedsPassword = false;
 
   networking = {
     hostName = "server";
     firewall = {
       enable = true;
       allowPing = true;
-      allowedTCPPorts = [ 445 139 631 8200 ];
+      allowedTCPPorts = [ 445 139 631 8200 9091 51413];
       allowedUDPPorts = [ 137 138 1900 ];
     };
   };
@@ -51,13 +52,14 @@
 
   services.openssh = {
     enable = true;
+    permitRootLogin = "no";
     passwordAuthentication = false;
     challengeResponseAuthentication = false;
   };
 
   services.printing = {
     enable = true;
-    listenAddresses = [ "server:631" ];
+    listenAddresses = [ "192.168.1.2:631" "server:631" ];
     drivers = [ pkgs.hplip ];
     extraConf = ''
       DefaultEncryption Never
@@ -106,8 +108,20 @@
     mediaDirs = [ "V,/storage/MOVIES" "P,/storage/PHOTOS" "A,/storage/MUSIC" ];
   };
 
+  services.transmission = {
+    enable = true;
+    settings = {
+      download-dir = "/storage/Downloads";
+      incomplete-dir = "/storage/Downloads/part";
+      incomplete-dir-enabled = true;
+      rpc-bind-address = "192.168.1.2";
+      rpc-whitelist = "127.0.0.1,192.168.1.*";
+      speed-limit-up-enabled = true;
+    };
+  };
+
   users.extraUsers.qb = {
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "transmission" ];
     isNormalUser = true;
   };
 
@@ -115,7 +129,7 @@
     uid = 1100;
     description = "Guest User";
     password = "";
-    extraGroups = [ "users" ];
+    extraGroups = [ "users" "transmission" ];
   };
 
   programs.bash.enableCompletion = true;
